@@ -1,0 +1,18 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+}
+
+.container {
+  background-color: lightgrey;
+  border: 10px solid black;
+  height: 560px;
+  width: 1000px;
+  top: 8px;
+  left: 12px;
+  position: absolute;
+}

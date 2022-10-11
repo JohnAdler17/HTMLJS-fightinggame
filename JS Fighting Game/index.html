@@ -1,0 +1,76 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+  <style>
+    *{
+      font-family: 'Nanum Brush Script', cursive;
+      box-sizing: border-box;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--using divs to sort and organize game elements like the healthbar-->
+  <div style="position: relative; display: inline-block;">
+    <div id="healthbarTimerInterface" style="position: absolute; display: none; width: 100%; align-items: center; padding: 10px;">
+      <!--player health-->
+      <div style="position: relative; width: 100%; display: flex; justify-content: flex-end; border: 3px solid black">
+        <div style="background-color: red; height: 30px; width: 100%"></div>
+        <div  id= "playerHealth" style="position: absolute; background: #818CF8; top: 0; bottom: 0; right: 0; width: 100%;"></div>
+      </div>
+
+      <!--timer-->
+      <div id="timer" style="background-color: gray; height: 60px; width: 100px; flex-shrink: 0; margin: 5px; display: flex; align-items: center; justify-content: center; border: 3px solid black">
+      </div>
+
+      <!--enemy health-->
+      <div style="position: relative; width: 100%; border: 3px solid black">
+        <div style="background-color: red; height: 30px;"></div>
+        <div  id= "enemyHealth" style="position: absolute; background: #818CF8; top: 0; bottom: 0; left: 0; right: 0;"></div>
+      </div>
+    </div>
+    <div id="displayText" style="position: absolute; color: red; display: none; align-items: center; justify-content: center; top: 0; right: 0; bottom: 0; left: 0;">Tie</div>
+
+    <div id="controlsMenu" class="container" style="display: none">
+      <div id="controlsTitle" style="margin: -15px 0px 0px 5px; font-size: 100px">Controls</div>
+      <div style="position: absolute; top: 10px; left: 880px;"><img width="90" height="50" src="./Assets/x-button1.png" alt="button not found"/></div>
+      <div id="controlsP1" style="position: relative; top: -70px; font-size: 25px">
+        <p style="position: relative; top: 30px;">Player 1:</p>
+        <dl>
+          <dt>Movement (Player 1):</dt>
+          <dd>- move left and right with A and D keys</dd>
+          <dd>- jump with the W key and crouch with the S key</dd>
+          <dt>Attacking:</dt>
+          <dd>- attack with the spacebar</dd>
+        </dl>
+      </div>
+      <div id="controlsP2" style="margin: 0px 0px 0px 5px; font-size: 25px; position: absolute; top: 30px; left: 500px;">
+        <p style="position: relative; top: 30px;">Player 2:</p>
+        <dl>
+          <dt>Movement:</dt>
+          <dd>- move left and right with LeftArrow and RightArrow keys</dd>
+          <dd>- jump with the UpArrow key and crouch with the DownArrow key</dd>
+          <dt>Attacking:</dt>
+          <dd>- attack with the backslash (/) key</dd>
+        </dl>
+      </div>
+      <div id="generalTips" style="position: relative; top: -70px; font-size: 25px">
+        <p style="position: relative; top: 30px;">General Tips:</p>
+        <dl>
+          <dt>Movement:</dt>
+          <dd>- characters have two jumps: one on the ground and one midair, jump refreshes when touching the ground</dd>
+          <dd>- crouching shrink your character's vertical hitbox by half</dd>
+          <dt>Attacking:</dt>
+          <dd>- attacks have attack lag (lag after attacking) and knockback (where opponent cannot move)</dd>
+          <dd>- attacking precisely can lead to combos</dd>
+        </dl>
+      </div>
+    </div>
+    <canvas></canvas>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/classes.js"></script>
+  <script src= "index.js"></script>
+</body>
